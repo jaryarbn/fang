@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jiang.mapper.PaymentMapper" >
+
+
+    <insert id="addPayment"   useGeneratedKeys="true" keyProperty="id" >
+        insert into payment (serialNo,money) values (#{serialNo}, #{money})
+    </insert>
+
+
+    <select id="getPaymentById"  resultType="org.jiang.beans.Payment">
+        select * from payment where id=#{id}
+    </select>
+</mapper>
